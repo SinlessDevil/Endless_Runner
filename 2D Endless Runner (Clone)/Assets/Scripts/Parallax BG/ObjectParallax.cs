@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Parallax{
     public class ObjectParallax : MonoBehaviour{
@@ -8,8 +7,7 @@ namespace Parallax{
         [SerializeField] private Color _color;
         [SerializeField] private int _layer;
 
-        private void Awake()
-        {
+        private void Start(){
             SpriteRenderer[] childrenSprites = GetComponentsInChildren<SpriteRenderer>();
             foreach (var sprite in childrenSprites) {
                 sprite.color = _color;

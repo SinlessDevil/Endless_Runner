@@ -33,7 +33,6 @@ public class CharacterHealth : MonoBehaviour
         }
     }
 
-
     private void OnHealthChange(int _health)
     {
         OnHealthChangeEvent?.Invoke(_health);

@@ -21,28 +21,23 @@ namespace Enemy
 
         private const float WAIT_TIME = 2f;
 
-        private void Start()
-        {
+        private void Start(){
             _collider = GetComponent<CircleCollider2D>();
             _enemyMove = GetComponent<EnemyMove>();
-
             _deathEffect = GetComponentInChildren<ParticleSystem>();
 
             _startPosition = transform.position;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.TryGetComponent(out CharacterHealth character))
-            {
+        private void OnTriggerEnter2D(Collider2D collision){
+            if (collision.gameObject.TryGetComponent(out CharacterHealth character)){
                 character.ApplyDamage(_damage);
 
                 StartCoroutine(ReloudEnemy());
             }
         }
 
-        private IEnumerator ReloudEnemy()
-        {
+        private IEnumerator ReloudEnemy(){
             PlayEffect();
 
             SetStateEnemy(false);

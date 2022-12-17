@@ -18,10 +18,10 @@ namespace Parallax{
         }
 
         private void MoveTo(float endPosition){
-
             for (int i = 0; i < _backgroundObjects.Length; i++){
                 _backgroundObjects[i].transform.Translate(Vector2.left * _backgroundObjects[i].speed * Time.fixedDeltaTime);
                 if (_backgroundObjects[i].transform.position.x <= endPosition){
+
                     _startPosition.y = _backgroundObjects[i].transform.position.y;
                     _backgroundObjects[i].transform.position = _startPosition;
                 }
